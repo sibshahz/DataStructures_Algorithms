@@ -47,6 +47,7 @@ class DoublyLinkedList{
         this.length++;
         return this;
     }
+
     prepend(value){
         // const newNode={
         //     value:value,
@@ -61,13 +62,13 @@ class DoublyLinkedList{
     }
     
     printList(){
-        const array= [];
+        const myArray= [];
         let currentNode = this.head;
         while(currentNode !== null){
-            array.push(currentNode.value);
+            myArray.push(currentNode.value);
             currentNode=currentNode.next;
         }
-        return array;
+        return myArray;
     }
 
     insert(index,value){
@@ -87,7 +88,7 @@ class DoublyLinkedList{
         newNode.next=follower;
         follower.prev=newNode;
         this.length++;
-        this.printList();
+        // this.printList();
 
         // const newNode=new Node(value);
         // let currentNode=this.head;
@@ -116,7 +117,7 @@ class DoublyLinkedList{
             this.printList();
             return;
         }else if(index === this.length){
-            let previous=this.traverseToIndex(index-2);
+            let previous=this.traverseToIndex(index-1);
             this.tail=previous;
             previous.next=null;
             this.length--;
@@ -127,7 +128,7 @@ class DoublyLinkedList{
             previous.next=itemToDelete.next;
             previous.prev=itemToDelete.prev;
             this.length--;
-            this.printList();
+            // this.printList();
             return;
         }
     }
