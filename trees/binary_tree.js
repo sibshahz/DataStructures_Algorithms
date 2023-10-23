@@ -12,6 +12,11 @@ class BinarySearchTree {
   }
 
   insert(value){
+    if(value >100 || value<-100){
+      // throw new Error("Value must be between -100 and 100");
+      console.log(`Error: Value must be between -100 and 100, you entered ${value}`);
+      return;
+    }
     const newNode = new Node(value);
     if (this.root === null) {
       this.root = newNode;
@@ -122,8 +127,7 @@ class BinarySearchTree {
 
           if(parentNode === null){
             this.root=leftmost;
-          }elseP
-          if(currentNode.value<parentNode.value){
+          }else if(currentNode.value<parentNode.value){
             parentNode.left=leftmost;
           }else if(currentNode.value > parentNode.value){
             parentNode.right=leftmost;
@@ -144,7 +148,16 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
+tree.insert(91)
+tree.insert(41)
+tree.insert(61)
+tree.insert(201)
+tree.insert(1701)
+tree.insert(151)
+tree.insert(11)
+tree.remove(9)
 console.log(JSON.stringify(traverse(tree.root)))
+// console.log(traverse(tree.root))
 // tree.lookup(15);
 // tree.lookup(7);
 
