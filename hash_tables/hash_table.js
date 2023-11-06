@@ -9,6 +9,7 @@ class HashTable {
     for (let i =0; i < key.length; i++){
         hash = (hash + key.charCodeAt(i) * i) % this.data.length
     }
+    console.log(`Address generated for ${key} is ${hash}`);
     return hash;
   }
 
@@ -48,8 +49,8 @@ class HashTable {
 
 const myHashTable = new HashTable(50);
 myHashTable.set('grapes', 18000)
-myHashTable.set('grapes', 15000)
 console.log(myHashTable.get('grapes'))
 myHashTable.set('apples', 9)
 console.log(myHashTable.get('apples'))
+// console.log(myHashTable.data)
 console.log(myHashTable.keys())
