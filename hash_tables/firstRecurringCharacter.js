@@ -19,6 +19,10 @@ function firstRecurringCharacter(input) {
   }
   return undefined
 }
+// console.log(firstRecurringCharacter([2,3,4,5]));
+
+
+
 
 function firstRecurringCharacter2(input) {
   let map = {};
@@ -32,7 +36,8 @@ function firstRecurringCharacter2(input) {
   return undefined
 }
 
-firstRecurringCharacter2([1,5,5,1,3,4,6])
+console.log(firstRecurringCharacter2([1,5,5,1,3,4,6]))
+console.log(firstRecurringCharacter2([2,5,1,2,3,5,1,2,4]))
 
 
 //Bonus... What if we had this:
