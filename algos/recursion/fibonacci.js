@@ -13,7 +13,7 @@ function fibonacciIterative(n){
   }
  return arr[n];
 }
-// fibonacciIterative(3);
+console.log(fibonacciIterative(1000));
 
 function fibonacciRecursive(n) {
   if (n < 2){
@@ -22,4 +22,4 @@ function fibonacciRecursive(n) {
   return fibonacciRecursive(n - 1) + fibonacciRecursive (n - 2)
 }
 
-console.log(fibonacciRecursive(50))
+// console.log(fibonacciRecursive(50))
