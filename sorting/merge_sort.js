@@ -39,4 +39,4 @@ function merge(left, right){
 
 
 const answer = mergeSort(numbers);
-console.log(answer);
+console.log(answer); 
