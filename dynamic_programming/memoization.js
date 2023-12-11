@@ -1,21 +1,37 @@
 //learn to cache
 function addTo80(n) {
     return n + 80;
-  }
+}
   
-  addTo80(5)
+  // console.log(addTo80(5))
+  // console.log(addTo80(20))
+  // console.log(addTo80(6))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+  // console.log(addTo80(5))
+
+
+
   
-  let cache = {};
-  function memoizeAddTo80(n) {
-    if (n in cache) {
-      return cache[n];
-    } else {
-      console.log('long time');
-      const answer = n + 80;
-      cache[n] = answer;
-      return answer;
-    }
-  }
+  // let cache = {
+  // };
+  // function memoizeAddTo80(n) {
+  //   if (n in cache) {
+  //     console.log("Returning cached value");
+  //     return cache[n];  
+  //   } else {
+  //     console.log('long time');
+  //     const answer = n + 80;
+  //     cache[n] = answer;
+  //     return answer;
+  //   }
+  // }
+
   
   // console.log(1, memoizeAddTo80(6))
   // // console.log(cache)
@@ -23,10 +39,11 @@ function addTo80(n) {
   // console.log(2, memoizeAddTo80(6))
   
   // let's make that better with no global scope. This is closure in javascript so.
-  function memoizeAddTo80(n) { 
+  function memoizeAddTo80() { 
     let cache = {};
     return function(n) {
       if (n in cache) {
+        console.log("Cached valued")
         return cache[n];
       } else {
         console.log('long time');
@@ -37,9 +54,22 @@ function addTo80(n) {
     }
   }
   
-  const memoized = memoizeAddTo80();
-  console.log(1, memoized(6))
+  // const memoized = memoizeAddTo80();
+  // console.log(1, memoized(6))
   // console.log(cache)
   // console.log('-----------')
-  console.log(2, memoized(6))
-  
+  // console.log(2, memoized(6))
+
+  const memoizeAddTo=memoizeAddTo80();
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(20))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(6))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(5))
+  console.log(memoizeAddTo(20))

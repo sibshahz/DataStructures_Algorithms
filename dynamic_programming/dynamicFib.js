@@ -11,7 +11,7 @@ function fibonacci(n) { //O(2^n)
 function fibonacciMaster() { //O(n)
   let cache = {};
   return function fib(n) {
-    calculations++;
+    // calculations++;
     if (n in cache) {
       return cache[n];
     } else {
@@ -35,8 +35,8 @@ function fibonacciMaster2(n) {
 
 const fasterFib = fibonacciMaster();
 
-console.log('Slow', fibonacci(35))
-console.log('DP', fasterFib(100));
-console.log('DP2', fibonacciMaster2(100));
-console.log('we did ' + calculations + ' calculations');
+// console.log('Slow', fibonacci(35))
+console.log('DP', fasterFib(1000));
+// console.log('DP2', fibonacciMaster2(100));
+// console.log('we did ' + calculations + ' calculations');
 
