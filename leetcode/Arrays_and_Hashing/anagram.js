@@ -5,16 +5,19 @@
 //     t=t.toLowerCase()
 //     const arrS=new Array(26).fill(0);
 //     const arrT=new Array(26).fill(0);
-//     for(let i=0;i<s.length;i++)
+    
+//     for(let i=0;i<s.length;i++){
 //         arrS[s.charCodeAt(i)-97]+=1;
     
-//     for(let i=0;i<t.length;i++)
+//     }
+//     for(let i=0;i<t.length;i++){
 //         arrT[t.charCodeAt(i)-97]+=1;
-    
-    
+//     }
 //     return JSON.stringify(arrS) === JSON.stringify(arrT);
-
 // };
+// console.log(isAnagram("anagram","nagaram"));
+// console.log(isAnagram("rat","car"));
+// console.log(isAnagram("semesterIV","semesterI"));
 
 /**
  * @param {string} s
@@ -22,11 +25,6 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-    // a=s
-    // b=t
-    // join one seet of a+b;
-    // if length of set === a then you have anagram
-    // otherwise you dont
     if(s.length !== t.length)
         return false;
 
@@ -48,6 +46,7 @@ var isAnagram = function(s, t) {
             objT[t[i]]=1;
         }
     }
+
     let anagram=true;
     Object.keys(objS).map((item) => {
         if(objS[item] !== objT[item])
@@ -57,8 +56,10 @@ var isAnagram = function(s, t) {
 
 };
 
-console.log(isAnagram("anagram","nagaram"));
-console.log(isAnagram("rat","car"));
+// console.log(isAnagram("anagram","nagaram"));
+// console.log(isAnagram("rat","car"));
+// console.log(isAnagram("bewakoof","super"));
+// console.log(isAnagram("semesterIV","semesterI"));
 
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
