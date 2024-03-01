@@ -7,8 +7,21 @@ const isPalindrome = function(s) {
     return str === rev;
 };
 
+const isPalindromeTwo = function(s) {
+    const str=s.replace(/[^a-zA-Z0-9]/g,"").toLowerCase();
+    for(let i=0;i<str.length;i++){
+        if(str[i] !== str[str.length-1-i]){
+            
+            return false;
+        }
+    }
+    return true;
+};
+
+console.log(isPalindromeTwo("A man, a plan, a canal: Panama"));
+// console.log(isPalindromeTwo("CATMATSAT"));
+// console.log(isPalindromeTwo("ATA"));
 // console.log(isPalindrome("A man, a plan, a canal: Panama"));
-console.log(isPalindrome("Super Cat:::"));
 
 
 // A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
